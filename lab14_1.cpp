@@ -2,8 +2,28 @@
 using namespace std;
 
 template <typename T>
-void insertionSort(T d[],int N){
+void insertionSort(T d[],int N) {
 
+	int count = 0;
+
+	for(int i = 1; i < N; i++) {
+
+		T key = d[i];
+		int j = i - 1;
+
+		while(j >= 0 && d[j] < key) {
+			d[j + 1] = d[j];
+			j = j - 1;
+		}
+	d[j + 1] = key;
+
+		count++;
+		cout << "Pass " << count << ":";
+			for(int z = 0; z < N; z++) {
+				cout << d[z] << " ";
+			}
+			cout << "\n";
+	}
 }
 
 int main(){
